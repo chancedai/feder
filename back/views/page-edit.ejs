@@ -1,0 +1,35 @@
+<%- include('header'); -%>
+  <div id="id_20150424183340" class="body wrap">
+    <link rel="stylesheet" href="static/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="static/codemirror/addon/fold/foldgutter.css">
+    <link rel="stylesheet" href="static/codemirror/addon/dialog/dialog.css">
+    <link rel="stylesheet" href="static/codemirror/theme/monokai.css">
+    <script>
+        FEDERDATA = {
+            mode:"'+mode+'"
+        };
+    </script>
+    <script src="static/codemirror/lib/codemirror.js"></script>
+    <script src="static/codemirror/addon/search/searchcursor.js"></script>
+    <script src="static/codemirror/addon/search/search.js"></script>
+    <script src="static/codemirror/addon/dialog/dialog.js"></script>
+    <script src="static/codemirror/addon/edit/matchbrackets.js"></script>
+    <script src="static/codemirror/addon/edit/closebrackets.js"></script>
+    <script src="static/codemirror/addon/comment/comment.js"></script>
+    <script src="static/codemirror/addon/wrap/hardwrap.js"></script>
+    <script src="static/codemirror/addon/fold/foldcode.js"></script>
+    <script src="static/codemirror/addon/fold/brace-fold.js"></script>
+    <script src="static/codemirror/mode/'+modejs+'/'+modejs+'.js"></script>
+    <script src="static/codemirror/keymap/sublime.js"></script>
+    <script src="static/codemirror/addon/selection/active-line.js"></script>
+    <script src="static/js/jquery.js"></script>
+    <article id="Feder_20150421104106">
+    <form feder-type="form" method="POST" action="/edit">
+    <input feder-type="file" name="file" type="hidden" value="'+file+'"/>
+    <textarea feder-type="content" name="content" style="display:none;">'+ fileData +'</textarea>
+    <input feder-type="submit" type="submit" value="提交"/>
+    </form>
+    </article>
+    <script src="static/js/edit.js"></script>
+  </div>
+  <%- include('footer'); -%>

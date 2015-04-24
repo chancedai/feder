@@ -1,0 +1,27 @@
+<%- include('header'); -%>
+  <div id="id_20150415143639" class="body wrap">
+    <form node-type="form" action='/add' method="POST">
+        <legend>请输入线上静态文件地址：</legend>
+        线上文件: <input node-type="file" type="text" name="file" />
+        <button node-type="submit" type="submit">代理</button>
+    </form>
+  </div>
+  <script src='static/js/jquery.js'></script>
+  <script>
+  ;(function(){
+     var getNodes = function(wrap,attr) {
+         attr = attr||'node-type';
+         wrap = $(wrap);
+         var nodes = $("[" + attr + "]", wrap);
+         var nodesObj = {};
+         nodesObj.wrap = wrap;
+         nodes.each(function(i) {
+             var item = $(this);
+             nodesObj[item.attr(attr)] = item;
+         });
+         return nodesObj;
+     };
+    var dom = getNodes($('#id_20150415143639'));
+  })();
+  </script>
+  <%- include('footer'); -%>
